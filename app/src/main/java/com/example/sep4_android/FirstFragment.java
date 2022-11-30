@@ -11,6 +11,7 @@ import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.sep4_android.databinding.FragmentFirstBinding;
 
+//Cigar App
 public class FirstFragment extends Fragment {
 
     private FragmentFirstBinding binding;
@@ -34,6 +35,14 @@ public class FirstFragment extends Fragment {
             public void onClick(View view) {
                 NavHostFragment.findNavController(FirstFragment.this)
                         .navigate(R.id.action_FirstFragment_to_SecondFragment);
+            }
+        });
+
+        binding.buttonSecond.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(FirstFragment.this)
+                        .navigate(R.id.action_FirstFragment_to_MonitorDataFragment);
             }
         });
     }
