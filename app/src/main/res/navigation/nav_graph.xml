@@ -8,21 +8,34 @@
     <fragment
         android:id="@+id/FirstFragment"
         android:name="com.example.sep4_android.FirstFragment"
-        android:label="@string/first_fragment_label"
+        android:label="Cigar App"
         tools:layout="@layout/fragment_first">
 
         <action
             android:id="@+id/action_FirstFragment_to_SecondFragment"
             app:destination="@id/SecondFragment" />
+        <action
+            android:id="@+id/action_FirstFragment_to_MonitorDataFragment"
+            app:destination="@id/MonitorDataFragment" />
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
         android:name="com.example.sep4_android.SecondFragment"
-        android:label="@string/second_fragment_label"
+        android:label="Manage Box"
         tools:layout="@layout/fragment_second">
 
         <action
             android:id="@+id/action_SecondFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/MonitorDataFragment"
+        android:name="com.example.sep4_android.MonitorDataFragment"
+        android:label="Monitor Data"
+        tools:layout="@layout/fragment_monitor_data">
+
+        <action
+            android:id="@+id/action_MonitorDataFragment_to_FirstFragment"
             app:destination="@id/FirstFragment" />
     </fragment>
 </navigation>
