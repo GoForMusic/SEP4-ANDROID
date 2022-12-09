@@ -25,6 +25,7 @@ import com.example.sep4_android.R;
 import com.example.sep4_android.ui.login.LoginViewModel;
 import com.example.sep4_android.ui.login.LoginViewModelFactory;
 import com.example.sep4_android.databinding.ActivityLoginBinding;
+import com.example.sep4_android.ui.register.RegisterActivity;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -44,6 +45,7 @@ private ActivityLoginBinding binding;
         final EditText usernameEditText = binding.username;
         final EditText passwordEditText = binding.password;
         final Button loginButton = binding.login;
+        final Button registerButton =findViewById(R.id.button_register);
         final ProgressBar loadingProgressBar = binding.loading;
 
         loginViewModel.getLoginFormState().observe(this, new Observer<LoginFormState>() {
@@ -121,6 +123,12 @@ private ActivityLoginBinding binding;
                         passwordEditText.getText().toString());
             }
         });
+        registerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            openRegister();
+            }
+        });
     }
 
     private void updateUiWithUser(LoggedInUserView model) {
@@ -133,5 +141,9 @@ private ActivityLoginBinding binding;
 
     private void showLoginFailed(@StringRes Integer errorString) {
         Toast.makeText(getApplicationContext(), errorString, Toast.LENGTH_SHORT).show();
+    }
+    public void openRegister(){
+        Intent intent = new Intent(this, RegisterActivity.class);
+        startActivity(intent);
     }
 }
