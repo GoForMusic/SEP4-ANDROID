@@ -3,6 +3,7 @@ package com.example.sep4_android;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,8 +11,15 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.sep4_android.entities.Box;
+import com.example.sep4_android.rest.ServiceGenerator;
+import com.example.sep4_android.rest.interfaces.BoxApi;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class BoxAdapter extends RecyclerView.Adapter<BoxAdapter.ViewHolder> {
 
@@ -55,6 +63,27 @@ public class BoxAdapter extends RecyclerView.Adapter<BoxAdapter.ViewHolder> {
                 onClickListener.onClick(boxes.get(getBindingAdapterPosition()));
             });
         }
+    }
+
+    public void getBox(String id)
+    {
+        BoxApi boxApi = ServiceGenerator.getBoxApi();
+        Call<List<Box>> call = boxApi.getBox(id);
+        call.enqueue(new Callback<List<Box>>() {
+            @Override
+            public void onResponse(Call<List<Box>> call, Response<List<Box>> response) {
+                if(response.isSuccessful())
+                {
+
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<Box>> call, Throwable t) {
+                Log.i("Retrofit", "Something went wrong :(");
+
+            }
+        });
     }
 
     public interface OnClickListener {
