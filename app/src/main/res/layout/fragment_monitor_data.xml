@@ -7,7 +7,7 @@
     tools:context=".MonitorDataFragment">
 
     <Button
-        android:id="@+id/button_first"
+        android:id="@+id/button_search"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Search"
@@ -15,4 +15,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
+        android:text="Button"
+        android:onClick="checkButton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -13,8 +13,10 @@ public class BoxResponse {
     private boolean locked;
 
     private String userId;
+    private String presetId;
+
 
     public Box getBox(){
-        return new Box(id, userId, locked, light);
+        return new Box(id, userId, locked, light, presetId);
     }
 }

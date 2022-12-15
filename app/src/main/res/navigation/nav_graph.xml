@@ -20,13 +20,16 @@
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
-        android:name="com.example.sep4_android.SecondFragment"
+        android:name="com.example.sep4_android.ManageBoxesFragment"
         android:label="Manage Box"
-        tools:layout="@layout/fragment_second">
+        tools:layout="@layout/activity_manage">
 
         <action
             android:id="@+id/action_SecondFragment_to_FirstFragment"
             app:destination="@id/FirstFragment" />
+        <action
+            android:id="@+id/getBox"
+            app:destination="@id/get_box_activity" />
     </fragment>
     <fragment
         android:id="@+id/MonitorDataFragment"
@@ -38,4 +41,9 @@
             android:id="@+id/action_MonitorDataFragment_to_FirstFragment"
             app:destination="@id/FirstFragment" />
     </fragment>
+    <activity
+        android:id="@+id/get_box_activity"
+        android:name="com.example.sep4_android.get_box_activity"
+        android:label="activity_get_box"
+        tools:layout="@layout/activity_get_box" />
 </navigation>

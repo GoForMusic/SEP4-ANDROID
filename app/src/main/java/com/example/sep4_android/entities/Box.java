@@ -1,34 +1,61 @@
 package com.example.sep4_android.entities;
 
 public class Box {
-    private String boxName;
-    private String description;
+
     private String id;
     private String userId;
     private boolean light;
     private boolean locked;
-    public Box(String name) {
-        boxName = name;
-    }
+    private String presetId;
 
-    Box(String name, String desc) {
-        boxName = name;
-        description = desc;
-    }
 
-    public Box(String id, String userId, boolean light, boolean locked)
+
+    public Box(String id, String userId, boolean light, boolean locked, String presetId)
     {
+        this.presetId=presetId;
         this.id=id;
         this.userId=userId;
         this.light=light;
         this.locked=locked;
     }
 
-    public String getName() {
-        return boxName;
+    public String getId() {
+        return id;
     }
 
-    public String getDescription() {
-        return description;
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    public boolean isLight() {
+        return light;
+    }
+
+    public void setLight(boolean light) {
+        this.light = light;
+    }
+
+    public boolean isLocked() {
+        return locked;
+    }
+
+    public void setLocked(boolean locked) {
+        this.locked = locked;
+    }
+
+    public String getPresetId() {
+        return presetId;
+    }
+
+    public void setPresetId(String presetId) {
+        this.presetId = presetId;
     }
 }

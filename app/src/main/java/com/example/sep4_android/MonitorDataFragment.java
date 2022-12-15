@@ -36,22 +36,14 @@ public class MonitorDataFragment extends Fragment {
 
     }
 
-    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
 
-        binding.buttonFirst.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NavHostFragment.findNavController(MonitorDataFragment.this)
-                        .navigate(R.id.action_MonitorDataFragment_to_FirstFragment);
-            }
-        });
-    }
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
     }
+
+
 
 }

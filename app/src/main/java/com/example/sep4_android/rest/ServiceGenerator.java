@@ -1,5 +1,7 @@
 package com.example.sep4_android.rest;
 
+import android.text.TextUtils;
+
 import com.example.sep4_android.rest.interfaces.BoxApi;
 
 import retrofit2.Retrofit;
@@ -13,11 +15,12 @@ public class ServiceGenerator {
         if(boxApi==null)
         {
             boxApi = new Retrofit.Builder()
-                    .baseUrl("http://sep4dataserver-env.eba-szznaygj.eu-north-1.elasticbeanstalk.com/api/v1")
+                    .baseUrl("http://sep4dataserver-env.eba-szznaygj.eu-north-1.elasticbeanstalk.com/api/v1/")
                     .addConverterFactory(GsonConverterFactory.create())
                     .build()
                     .create(BoxApi.class);
         }
         return boxApi;
     }
+
 }

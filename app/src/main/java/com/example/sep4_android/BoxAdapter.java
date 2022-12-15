@@ -41,10 +41,11 @@ public class BoxAdapter extends RecyclerView.Adapter<BoxAdapter.ViewHolder> {
         return new ViewHolder(view);
     }
 
-    public void onBindViewHolder(@NonNull ViewHolder viewHolder, int position) {
-        viewHolder.name.setText(boxes.get(position).getName());
-        //viewHolder.icon.setImageResource(boxes.get(position).getDescription());
+    @Override
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+
     }
+
 
     public int getItemCount() {
         return boxes.size();
@@ -65,26 +66,7 @@ public class BoxAdapter extends RecyclerView.Adapter<BoxAdapter.ViewHolder> {
         }
     }
 
-    public void getBox(String id)
-    {
-        BoxApi boxApi = ServiceGenerator.getBoxApi();
-        Call<List<Box>> call = boxApi.getBox(id);
-        call.enqueue(new Callback<List<Box>>() {
-            @Override
-            public void onResponse(Call<List<Box>> call, Response<List<Box>> response) {
-                if(response.isSuccessful())
-                {
 
-                }
-            }
-
-            @Override
-            public void onFailure(Call<List<Box>> call, Throwable t) {
-                Log.i("Retrofit", "Something went wrong :(");
-
-            }
-        });
-    }
 
     public interface OnClickListener {
         void onClick(Box box);
